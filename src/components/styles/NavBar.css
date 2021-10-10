@@ -1,0 +1,25 @@
+.nav {
+    display: flex;
+    height: 75px;
+    background-color: darkslategray;
+    align-items: center;
+}
+
+.logoContainer {
+    text-align: center;
+    width: 50%;
+}
+
+.navUl {
+    list-style: none;
+    display: flex;
+}
+
+.navLi {
+    padding: 20px;
+}
+
+.links {
+    text-decoration: none;
+    color: lightgray;
+}
