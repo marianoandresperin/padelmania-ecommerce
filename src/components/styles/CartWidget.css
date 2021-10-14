@@ -1,0 +1,9 @@
+.cartIcon {
+    width: 2.5rem;  
+}
+
+.cartContainer {
+    display: flex;
+    justify-content: flex-end;
+    width: 25%;
+}
