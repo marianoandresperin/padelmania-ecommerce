@@ -1,0 +1,52 @@
+.counter {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    border: 0.1rem solid lightgray;
+    border-radius: 10px;
+}
+
+.cantidad {
+    margin: 0 1rem 0 1rem;
+}
+
+.counterBtn {
+    font-size: 1.5rem;
+    width: 2rem;
+    height: 2rem;
+    text-align: center;
+    cursor: pointer;
+}
+
+.minusBtn {
+    border: 0;
+    border-right: 0.1rem solid lightgray;
+    border-radius: 10px;
+}
+
+.plusBtn {
+    border: 0;
+    border-left: 0.1rem solid lightgray;
+    border-radius: 10px;
+}
+
+.counterBtn:hover {
+    background-color: lightgray;
+}
+
+.carritoBtn {
+    font-size: 0.9rem;
+    color: white;
+    width: 8rem;
+    height: 2rem;
+    background-color: rgb(19, 163, 26);
+    border: 0.1rem solid rgb(19, 163, 26);
+    border-radius: 10px;
+    text-align: center;
+    cursor: pointer;
+}
+
+.carritoBtn:hover {
+    background-color: rgb(11, 105, 16);
+}

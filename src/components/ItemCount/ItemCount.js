@@ -1,12 +1,15 @@
-const ItemCount = ({stock, cantidad, onAdd, onRemove}) => {
+import "./ItemCount.css"
+
+const ItemCount = ({cantidad, onAdd, onRemove}) => {
       
     return (
         <>
-            <h3>Stock: {stock}</h3>
-            <button onClick={onRemove}>-</button>
-            <button onClick={onAdd}>+</button>
-            <h5>Cantidad: {cantidad}</h5>
-            <button>Agregar al carrito</button>
+            <div className="counter">
+                <button className="counterBtn minusBtn" onClick={onRemove}>-</button>
+                <p className="cantidad">{cantidad}</p>
+                <button className="counterBtn plusBtn" onClick={onAdd}>+</button>
+            </div>
+            <button className="carritoBtn">Agregar al carrito</button>
         </>
     )
 }
