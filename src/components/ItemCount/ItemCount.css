@@ -5,6 +5,7 @@
     align-items: center;
     border: 0.1rem solid lightgray;
     border-radius: 10px;
+    margin-bottom: 1rem;
 }
 
 .cantidad {
