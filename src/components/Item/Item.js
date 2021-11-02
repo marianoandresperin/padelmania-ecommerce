@@ -10,6 +10,7 @@ const Item = ({ pictureUrl, title, price, id, stock }) => {
     const bajar = () => {
         counter >= 1 ? setCounter(counter - 1) : alert("La cantidad mínima válida es 0!");
     };
+    
     return (
         <>
             <div className="item">

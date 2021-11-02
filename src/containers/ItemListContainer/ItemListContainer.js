@@ -1,12 +1,10 @@
 import './ItemListContainer.css';
 import ItemList from '../../components/ItemList/ItemList.js';
 import { useState, useEffect } from 'react';
-import productList from '../../components/Productos/Productos';
+import productList from '../../components/Productos/Productos.js';
 
 const ItemListContainer = ({ greeting }) => {
     const [products, setProducts] = useState([]);
-    // PARA CHECKEAR EN CONSOLA QUE EL MONTAJE DE LOS PRODUCTOS SEA A TRAVES DE LA PROMISE
-    console.log(products);
     const task = new Promise((resolve, reject) => {
         setTimeout(() => {
             resolve(productList)
@@ -22,7 +20,10 @@ const ItemListContainer = ({ greeting }) => {
             }
         )
     });
-    
+
+    // PARA CHECKEAR EN CONSOLA QUE EL MONTAJE DE LOS PRODUCTOS SEA A TRAVES DE LA PROMISE
+    console.log(products);
+
     return (
         <section className="container">
             <h1>{greeting}</h1>

@@ -1,0 +1,47 @@
+.detail {
+    border: 0.1rem solid lightgray;
+    border-radius: 15px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    margin: 2rem 0 2rem 0;
+    width: 60%;
+}
+
+.detailImgContainer {
+    margin: 2rem 0 2rem 0;
+    width: 40%;
+}
+
+.detailImg {
+    width: 100%;
+}
+
+.detailItem {
+    width: 25rem;
+    height: 100%;
+    width: 60%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    border-left: 0.1rem solid lightgray;
+}
+
+.detailTitle {
+    font-size: 3rem;
+}
+
+.detailText {
+    font-size: 1.2rem;
+}
+
+.detailPrice {
+    font-size: 2rem;
+}
+
+.detailStock {
+    margin: 1rem 0 1rem 0;
+    font-size: 1.2rem;
+}
