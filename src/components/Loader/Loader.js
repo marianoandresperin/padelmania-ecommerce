@@ -1,10 +1,11 @@
 import "./Loader.css"
+import loaderImg from "../../assets/loader.gif"
 
 const Loader = () => {
     return (
         <>
             <div className="loader">
-                Loading...
+                <img src={loaderImg} alt="Loading.."></img>
             </div>
         </>
     )

@@ -2,9 +2,10 @@ import './ItemListContainer.css';
 import ItemList from '../../components/ItemList/ItemList.js';
 import { useState, useEffect } from 'react';
 import productList from '../../components/Productos/Productos.js';
+import Loader from '../../components/Loader/Loader';
 
 const ItemListContainer = ({ greeting }) => {
-    const [products, setProducts] = useState([]);
+    const [products, setProducts] = useState(null);
     const task = new Promise((resolve, reject) => {
         setTimeout(() => {
             resolve(productList)
@@ -26,8 +27,9 @@ const ItemListContainer = ({ greeting }) => {
 
     return (
         <section className="container">
-            <h1>{greeting}</h1>
-            <ItemList products={products} />
+            <h1 className="greeting">{greeting}</h1>
+            {products ? (<ItemList products={products} />
+            ) : (<Loader />)}
         </section>
     );
 }
