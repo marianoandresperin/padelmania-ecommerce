@@ -3,8 +3,10 @@ import { useState, useEffect } from 'react';
 import productList from '../../components/Productos/Productos';
 import ItemDetail from '../../components/ItemDetail/ItemDetail.js';
 import Loader from '../../components/Loader/Loader';
+import { useParams } from 'react-router';
 
 const ItemDetailContainer = () => {
+    const { itemId } = useParams();
     const [itemDetail, setItemDetail] = useState(undefined);
     const detail = new Promise((resolve, reject) => {
         setTimeout(() => {
@@ -13,12 +15,12 @@ const ItemDetailContainer = () => {
     });
     useEffect(() => {
         detail.then((result) => {
-                setItemDetail(result[3])
+                setItemDetail(result.id)
             }, (err) => {
                 console.log("Ocurrió un error al cargar el detalle del producto: " + err)
             }
         )
-    });
+    }, []);
    
     return (
         <>

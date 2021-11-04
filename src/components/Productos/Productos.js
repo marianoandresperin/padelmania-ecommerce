@@ -7,7 +7,8 @@ const productList = [
         stock: 13,
         detail: "Paleta profesional de Padel color azul.",
         cantidad: 0,
-        price: "$29.999"
+        price: "$29.999",
+        categoryId: "Novato"
     },
     {
         pictureUrl: "https://d3ugyf2ht6aenh.cloudfront.net/stores/919/712/products/paleta-bewe-nova-eva-soft-11-eaa80a38e4802cb5d016201534372025-1024-1024.png",
@@ -16,7 +17,8 @@ const productList = [
         stock: 22,
         detail: "Paleta profesional de Padel color verde.",
         cantidad: 0,
-        price: "$69.999"
+        price: "$69.999",
+        categoryId: "Avanzado"
     },
     {
         pictureUrl: "https://d3ugyf2ht6aenh.cloudfront.net/stores/919/712/products/paleta_siux_tsunami_2-0_roja_eva_111-7e450f7d798bdbf8e715780087814248-1024-1024.png",
@@ -25,7 +27,8 @@ const productList = [
         stock: 8,
         detail: "Paleta profesional de Padel color rojo.",
         cantidad: 0,
-        price: "$44.999"
+        price: "$44.999",
+        categoryId: "Intermedio"
     },
     {
         pictureUrl: "https://d3ugyf2ht6aenh.cloudfront.net/stores/919/712/products/paleta-siux-pegasus-grafeno-1k-lady-eva-soft-11-153f439d5c54cf503116121992597519-240-0.png",
@@ -34,7 +37,8 @@ const productList = [
         stock: 2,
         detail: "Paleta profesional de Padel color negro.",
         cantidad: 0,
-        price: "$39.999"
+        price: "$39.999",
+        categoryId: "Intermedio"
     },
     {
         pictureUrl: "https://d3ugyf2ht6aenh.cloudfront.net/stores/919/712/products/paleta-bewe-colo-kids-eva-soft-11-59afaf6240928c723c16201544687949-1024-1024.png",
@@ -43,7 +47,8 @@ const productList = [
         stock: 5,
         detail: "Paleta profesional de Padel multicolor.",
         cantidad: 0,
-        price: "$79.999"
+        price: "$79.999",
+        categoryId: "Avanzado"
     },
     {
         pictureUrl: "https://d3ugyf2ht6aenh.cloudfront.net/stores/919/712/products/paleta-sane-impronta-iii-eva-soft_11-475c646c1044fdf20216255977551226-1024-1024.png",
@@ -52,7 +57,8 @@ const productList = [
         stock: 11,
         detail: "Paleta profesional de Padel color amarillo.",
         cantidad: 0,
-        price: "$19.999"
+        price: "$19.999",
+        categoryId: "Novato"
     }
 ];
 

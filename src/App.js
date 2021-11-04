@@ -2,11 +2,12 @@ import './App.css';
 import ItemListContainer from './containers/ItemListContainer/ItemListContainer.js';
 import NavBar from './components/NavBar/NavBar.js';
 import ItemDetailContainer from './containers/ItemDetailContainer/ItemDetailContainer.js';
-import { BrowserRouter, Switch, Route } from 'react-router-dom';
+import { BrowserRouter, Switch, Route, } from 'react-router-dom';
 import { useEffect } from 'react';
 
+
 function App() {
-  const { itemId } = useParams();
+
   useEffect(() => {
 
   })
@@ -18,14 +19,11 @@ function App() {
           <Route exact path="/">
             <ItemListContainer greeting="Tienda PadelManía, donde encontrás lo que buscás!" />
           </Route>
-          <Route path="/category/:id">
-            <ItemListContainer greeting="Usted está visualizando la categoría:" {itemId} />
+          <Route exact path="/category/:categoryId">
+            <ItemListContainer greeting="Estás visualizando la categoría: " categoryId=""/>
           </Route>
-          <Route path="/item/:id">
+          <Route exact path="/item/:id">
             <ItemDetailContainer />
-          </Route>
-          <Route path="/cart">
-            {/* <Cart /> */}
           </Route>
         </Switch>
       </div>

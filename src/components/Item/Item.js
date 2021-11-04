@@ -1,6 +1,7 @@
 import "./Item.css"
 import ItemCount from "../ItemCount/ItemCount";
 import { useState } from "react";
+import { NavLink } from "react-router-dom";
 
 const Item = ({ pictureUrl, title, price, id, stock }) => {
     const [counter, setCounter] = useState(0);
@@ -14,6 +15,7 @@ const Item = ({ pictureUrl, title, price, id, stock }) => {
     return (
         <>
             <div className="item">
+                <NavLink to={`/item/${id}`} />
                 <img src={pictureUrl} alt="Foto de Paleta" className="itemPicture"/>
                 <h3>{title}</h3>
                 <h4>{price}</h4>
