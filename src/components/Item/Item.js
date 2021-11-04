@@ -15,10 +15,11 @@ const Item = ({ pictureUrl, title, price, id, stock }) => {
     return (
         <>
             <div className="item">
-                <NavLink to={`/item/${id}`} />
-                <img src={pictureUrl} alt="Foto de Paleta" className="itemPicture"/>
-                <h3>{title}</h3>
-                <h4>{price}</h4>
+                <NavLink to={`/item/${id}`} className="itemLinks">
+                    <img src={pictureUrl} alt="Foto de Paleta" className="itemPicture"/>
+                    <h3 className="itemTitle">{title}</h3>
+                    <h4 className="itemPrice">{price}</h4>
+                </NavLink>
                 <ItemCount onAdd={subir} onRemove={bajar} cantidad={counter} />
                 <p className="stock">Quedan {stock} en stock!</p>
             </div>

@@ -7,7 +7,7 @@ import { useParams } from 'react-router';
 
 const ItemDetailContainer = () => {
     const { itemId } = useParams();
-    const [itemDetail, setItemDetail] = useState(undefined);
+    const [itemDetail, setItemDetail] = useState(null);
     const detail = new Promise((resolve, reject) => {
         setTimeout(() => {
             resolve(productList)
@@ -15,7 +15,8 @@ const ItemDetailContainer = () => {
     });
     useEffect(() => {
         detail.then((result) => {
-                setItemDetail(result.id)
+            let found = result.find(({ id }) => id ===  itemId )
+            setItemDetail(found)
             }, (err) => {
                 console.log("Ocurrió un error al cargar el detalle del producto: " + err)
             }

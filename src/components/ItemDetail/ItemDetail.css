@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,300;1,300&display=swap');
+
 .detail {
     border: 0.1rem solid #a976c3;
     border-radius: 15px;
@@ -31,17 +33,22 @@
 
 .detailTitle {
     font-size: 3rem;
+    font-family: 'Roboto', sans-serif;
 }
 
 .detailText {
     font-size: 1.2rem;
+    font-family: 'Roboto', sans-serif;
+    font-style: italic;
 }
 
 .detailPrice {
     font-size: 2rem;
+    font-family: 'Roboto', sans-serif;
 }
 
 .detailStock {
     margin: 1rem 0 1rem 0;
     font-size: 1.2rem;
+    font-family: 'Roboto', sans-serif;
 }

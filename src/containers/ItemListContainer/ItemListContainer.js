@@ -3,7 +3,7 @@ import ItemList from '../../components/ItemList/ItemList.js';
 import { useState, useEffect } from 'react';
 import productList from '../../components/Productos/Productos.js';
 import Loader from '../../components/Loader/Loader';
-import { useParams, Link } from 'react-router-dom';
+import { useParams} from 'react-router-dom';
 
 const ItemListContainer = ({ greeting, category }) => {
     const [products, setProducts] = useState(null);
@@ -44,18 +44,12 @@ const ItemListContainer = ({ greeting, category }) => {
                 console.log("Ocurrió un error al cargar los productos: " + err)
             }
         )
-    }, [categoryId]);
-
-    // PARA CHECKEAR EN CONSOLA QUE EL MONTAJE DE LOS PRODUCTOS SEA A TRAVES DE LA PROMISE
-    console.log(categoryId);
+    }, []);
 
     return (
         <section className="container">
             <h1 className="greeting">{greeting}{category}</h1>
-            {products ? (<>
-                <ItemList products={products} />
-                <Link key={products.categoryId} to={`/item/${products.id}`}></Link>
-                </>
+            {products ? (<ItemList products={products} />
             ) : (<Loader />)}
         </section>
     );
