@@ -44,7 +44,7 @@ const ItemListContainer = ({ greeting, category }) => {
                 console.log("Ocurrió un error al cargar los productos: " + err)
             }
         )
-    }, []);
+    }, [categoryId, products, task]);
 
     return (
         <section className="container">
