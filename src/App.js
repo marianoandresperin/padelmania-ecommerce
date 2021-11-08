@@ -2,9 +2,9 @@ import './App.css';
 import ItemListContainer from './containers/ItemListContainer/ItemListContainer.js';
 import NavBar from './components/NavBar/NavBar.js';
 import ItemDetailContainer from './containers/ItemDetailContainer/ItemDetailContainer.js';
+import Cart from './components/Cart/Cart';
 import { BrowserRouter, Switch, Route, } from 'react-router-dom';
 import { useEffect } from 'react';
-
 
 function App() {
 
@@ -24,6 +24,9 @@ function App() {
           </Route>
           <Route exact path="/item/:itemId">
             <ItemDetailContainer />
+          </Route>
+          <Route path="/cart">
+            <Cart />
           </Route>
         </Switch>
       </div>

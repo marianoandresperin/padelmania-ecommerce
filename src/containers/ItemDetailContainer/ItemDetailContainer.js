@@ -15,13 +15,15 @@ const ItemDetailContainer = () => {
     });
     useEffect(() => {
         detail.then((result) => {
-            let found = result.find(({ id }) => id ===  itemId )
+            let found = result.find(({ id }) => id === itemId )
             setItemDetail(found)
             }, (err) => {
                 console.log("Ocurrió un error al cargar el detalle del producto: " + err)
             }
         )
-    }, []);
+    });
+
+
    
     return (
         <>
@@ -34,6 +36,8 @@ const ItemDetailContainer = () => {
                     price={itemDetail.price}
                     stock={itemDetail.stock}
                     detail={itemDetail.detail}
+                    cartAdd={itemDetail.cartAdd}
+                    id={itemDetail.id}
                     />
                 ) : (<Loader />)
                 }

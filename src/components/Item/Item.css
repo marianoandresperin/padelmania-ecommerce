@@ -9,6 +9,10 @@
     align-items: center;
 }
 
+.itemLinks {
+    text-decoration: none;
+}
+
 .itemPicture {
     width: 10rem;
     margin-top: 1rem;
@@ -34,10 +38,25 @@
     color: #a976c3;
 }
 
-.itemLinks {
-    text-decoration: none;
+.btnVerMas {
+    font-size: 0.9rem;
+    color: white;
+    width: 8rem;
+    height: 2rem;
+    background-color: #a976c3;
+    border: 0.1rem solid #a976c3;
+    border-radius: 10px;
+    text-align: center;
+    cursor: pointer;
+    font-family: 'Roboto', sans-serif;
+}
+
+.btnVerMas:hover {
+    background-color: #5f2a62;
+    border: 0.1rem solid #5f2a62;
 }
 
 .stock {
     font-size: 0.8rem;
+    color: #a976c3;
 }
