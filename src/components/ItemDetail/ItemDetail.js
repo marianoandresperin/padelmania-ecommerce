@@ -7,7 +7,7 @@ import { NavLink } from "react-router-dom";
 
 const ItemDetail = ({ pictureUrl, title, price, id, stock, detail }) => {
     const { itemId } = useParams();
-    const [cart, setCart] = useState(productList);
+    const [cart, setCart] = useState(null);
     const [flag, setFlag] = useState(false);
     const [counter, setCounter] = useState(0);
     const subir = () => {
