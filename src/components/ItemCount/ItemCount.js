@@ -1,5 +1,4 @@
 import "./ItemCount.css"
-
 const ItemCount = ({cantidad, onAdd, onRemove, cartAdd}) => {
 
     return (

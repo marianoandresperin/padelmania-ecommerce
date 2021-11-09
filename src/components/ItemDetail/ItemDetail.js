@@ -3,11 +3,12 @@ import ItemCount from "../ItemCount/ItemCount";
 import { useState } from "react";
 import { useParams } from "react-router";
 import productList from "../Productos/Productos";
-
+import { NavLink } from "react-router-dom";
 
 const ItemDetail = ({ pictureUrl, title, price, id, stock, detail }) => {
     const { itemId } = useParams();
-    const [cart, setCart] = useState(null);
+    const [cart, setCart] = useState(productList);
+    const [flag, setFlag] = useState(false);
     const [counter, setCounter] = useState(0);
     const subir = () => {
         stock === counter ? alert("No hay más stock disponible!") : setCounter(counter + 1);
@@ -19,12 +20,15 @@ const ItemDetail = ({ pictureUrl, title, price, id, stock, detail }) => {
     const cartAdd = (() => {
         let getItemById = productList.find(({ id }) => id === itemId);
         setCart(getItemById.cantidad = counter);
+        setFlag(true)
         return setCart(getItemById)
     }
     );
-
+    
     // Para checkear que se setee el producto agregado al carrito, con su correspondiente cantidad
-    console.log(cart)
+    if (flag === true) {
+        console.log(cart)
+    };
     
     return (
         <>
@@ -36,8 +40,13 @@ const ItemDetail = ({ pictureUrl, title, price, id, stock, detail }) => {
                     <h1 className="detailTitle">{title}</h1>
                     <p className="detailText">{detail}</p>
                     <h2 className="detailPrice">{price}</h2>
-                    <ItemCount onAdd={subir} onRemove={bajar} cantidad={counter} cartAdd={cartAdd} />
-                    <p className="detailStock">Quedan {stock} en stock!</p>
+                    { (flag  === false) ? 
+                        <ItemCount onAdd={subir} onRemove={bajar} cantidad={counter} cartAdd={cartAdd} /> :
+                        <NavLink to={`/cart`} className="itemLinks">
+                            <button className="carritoBtn">Ver carrito</button>
+                        </NavLink>
+                        }
+                        <p className="detailStock">Quedan {stock} en stock!</p>
                 </div>
             </section>
         </>

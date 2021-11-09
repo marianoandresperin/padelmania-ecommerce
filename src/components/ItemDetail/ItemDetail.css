@@ -34,21 +34,32 @@
 .detailTitle {
     font-size: 3rem;
     font-family: 'Roboto', sans-serif;
+    color: #5f2a62;
 }
 
 .detailText {
+    font-size: 1.5rem;
+    font-family: 'Roboto', sans-serif;
+    font-style: italic;
+    color: #a976c3;
+}
+
+.detailCart {
     font-size: 1.2rem;
     font-family: 'Roboto', sans-serif;
     font-style: italic;
+    color: #a976c3;
 }
 
 .detailPrice {
     font-size: 2rem;
     font-family: 'Roboto', sans-serif;
+    color: #5f2a62;
 }
 
 .detailStock {
     margin: 1rem 0 1rem 0;
-    font-size: 1.2rem;
+    font-size: 1rem;
     font-family: 'Roboto', sans-serif;
+    color: #a976c3;
 }

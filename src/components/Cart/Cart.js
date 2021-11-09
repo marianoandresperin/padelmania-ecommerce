@@ -5,7 +5,7 @@ const Cart = () => {
     return (
         <>
             <div className="cart">
-                    <h1>No hay nada en el carrito.</h1> : 
+                    <h1>No hay nada en el carrito.</h1>
             </div>
         </>
     )
