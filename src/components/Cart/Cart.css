@@ -1,0 +1,14 @@
+.cartList {
+    display: flex;
+    flex-direction: column;
+}
+
+.cartItem {
+    display: flex;
+    flex-direction: row;
+    height: 10rem;
+}
+
+.cartPicture {
+    width: 10rem;
+}

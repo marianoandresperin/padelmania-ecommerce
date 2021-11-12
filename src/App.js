@@ -5,6 +5,7 @@ import ItemDetailContainer from './containers/ItemDetailContainer/ItemDetailCont
 import Cart from './components/Cart/Cart';
 import { BrowserRouter, Switch, Route, } from 'react-router-dom';
 import { useEffect } from 'react';
+import CartProvider from './contexts/CartContext';
 
 function App() {
 
@@ -12,25 +13,27 @@ function App() {
 
   })
   return (
-    <BrowserRouter>
-      <div className="App">
-        <NavBar />
-        <Switch>        
-          <Route exact path="/">
-            <ItemListContainer greeting="Tienda PadelManía, donde encontrás lo que buscás!" />
-          </Route>
-          <Route exact path="/category/:categoryId">
-            <ItemListContainer greeting="Estás visualizando la categoría: " categoryId=""/>
-          </Route>
-          <Route exact path="/item/:itemId">
-            <ItemDetailContainer />
-          </Route>
-          <Route path="/cart">
-            <Cart />
-          </Route>
-        </Switch>
-      </div>
-    </BrowserRouter>
+    <CartProvider>
+      <BrowserRouter>
+        <div className="App">
+          <NavBar />
+          <Switch>        
+            <Route exact path="/">
+              <ItemListContainer greeting="Tienda PadelManía, donde encontrás lo que buscás!" />
+            </Route>
+            <Route exact path="/category/:categoryId">
+              <ItemListContainer greeting="Estás visualizando la categoría: " categoryId=""/>
+            </Route>
+            <Route exact path="/item/:itemId">
+              <ItemDetailContainer />
+            </Route>
+            <Route path="/cart">
+              <Cart />
+            </Route>
+          </Switch>
+        </div>
+      </BrowserRouter>
+    </CartProvider>
   );
 }
 

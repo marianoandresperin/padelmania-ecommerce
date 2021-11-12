@@ -42,20 +42,3 @@
     background-color: #5f2a62;
     color: white;
 }
-
-.carritoBtn {
-    font-size: 0.9rem;
-    color: white;
-    width: 8rem;
-    height: 2rem;
-    background-color: rgb(19, 163, 26);
-    border: 0.1rem solid rgb(19, 163, 26);
-    border-radius: 10px;
-    text-align: center;
-    cursor: pointer;
-    font-family: 'Roboto', sans-serif;
-}
-
-.carritoBtn:hover {
-    background-color: rgb(11, 105, 16);
-}

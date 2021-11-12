@@ -7,7 +7,7 @@ import { useParams} from 'react-router-dom';
 
 const ItemListContainer = ({ greeting, category }) => {
     const [products, setProducts] = useState(null);
-    const [flag, setFlag] = useState(false);
+    const [loaded, setLoaded] = useState(false);
     const { categoryId } = useParams();
     category = categoryId
     const task = new Promise((resolve, reject) => {
@@ -16,7 +16,7 @@ const ItemListContainer = ({ greeting, category }) => {
         }, 2000);
     });
     useEffect(() => {
-        setFlag(false);
+        setLoaded(false);
         task.then(
             (result) => {
                 let filtered = []
@@ -40,7 +40,7 @@ const ItemListContainer = ({ greeting, category }) => {
                 default:
                    setProducts(result)
                     break;
-                }setFlag(true)
+                }setLoaded(true)
             },
             (err) => {
                 console.log("Ocurrió un error al cargar los productos: " + err)
@@ -50,7 +50,7 @@ const ItemListContainer = ({ greeting, category }) => {
    
     return (
         <section className="container">
-            {flag === true ? (
+            {loaded === true ? (
                 <>
                     <h1 className="greeting">{greeting}{category}</h1>
                     <ItemList products={products} />
