@@ -26,22 +26,24 @@ const Cart = () => {
     };
 
     return (
-        <>{(emptyCart === false) ?
-            <div className="cartList">
-                <h1 className="cartGreeting">Carrito de compras</h1>
-                {cart.map(n =>
-                    <div className="cartItem" >
+        <>
+            {(emptyCart === false) ?
+                <div className="cartList">
+                    <h1 className="cartGreeting">Carrito de compras</h1>
+                    {cart.map(n =>
+                        <div className="cartItem" >
                             <img src={n.pictureUrl} alt="Foto de Paleta" className="cartPicture" />
                             <h3 className="cartTitle">{n.title}</h3>
                             <h4 className="cartPrice">Precio: {n.price}</h4>
                             <p className="cartQuantity">Cantidad: x{n.cantidad}</p>
                             <button id={n.id} onClick={cartRemove} className="cartRemove">Eliminar</button>
-                        </div>)}
-                <div className="cartBtnContainer">
-                    <button onClick={cartClear} className="cartClear">Vaciar el carrito</button>
-                    <button className="cartBuy">Confirmar compra</button>
-                </div>
-            </div> : <>
+                        </div>
+                    )}
+                    <div className="cartBtnContainer">
+                        <button onClick={cartClear} className="cartClear">Vaciar el carrito</button>
+                        <button className="cartBuy">Confirmar compra</button>
+                    </div>
+                </div> : <>
                 <h1 className="cartGreeting">El carrito está vacío!</h1>
                 <Link to={'/'}><button className="cartBuy">Ir a los productos</button></Link>
             </>

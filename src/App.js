@@ -4,14 +4,10 @@ import NavBar from './components/NavBar/NavBar.js';
 import ItemDetailContainer from './containers/ItemDetailContainer/ItemDetailContainer.js';
 import Cart from './components/Cart/Cart';
 import { BrowserRouter, Switch, Route, } from 'react-router-dom';
-import { useEffect } from 'react';
 import CartProvider from './contexts/CartContext';
 
 function App() {
 
-  useEffect(() => {
-
-  })
   return (
     <CartProvider>
       <BrowserRouter>
