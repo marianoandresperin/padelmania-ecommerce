@@ -6,23 +6,26 @@ const CartProvider = ({ children }) => {
     const [cart, setCart] = useState([]);
     
     const addItem = (item) => {
-        const isInCart = cart.some((product) => product.id === item.id)
+        const isInCart = cart.some((product) => product.id === item.id);
         
         if (!isInCart) {
             setCart([...cart, item]);
+            console.log(`Agregaste al carrito: ${item.cantidad}x ${item.title}.`);
         } else {
             // const getQuantity = cart.find((product) => product.id === item.id)
             // setCart([...cart, (item.cantidad)])
-        } 
-    }
+        };
+    };
     const removeItem = (item) => {
-        setCart(cart.filter(( item ) => item.id === !cart.id))
-        console.log(cart)
-    }
+        const getIndex = cart.indexOf(item);
+        cart.splice(getIndex, 1);
+        console.log(`Eliminaste del carrito: ${item.cantidad}x ${item.title}.`);
+        setCart([...cart])
+    };
 
     const clearCart = () => {
         setCart([]);
-        console.log("Se vacio el carrito")
+        console.log(`Se vacio el carrito.`);
     };
     return (
         <CartContext.Provider value={{ cart, addItem, removeItem, clearCart }}>

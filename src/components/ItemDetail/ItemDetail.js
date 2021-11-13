@@ -1,6 +1,6 @@
 import "./ItemDetail.css"
 import ItemCount from "../ItemCount/ItemCount";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { useParams } from "react-router";
 import productList from "../Productos/Productos";
 import { NavLink } from "react-router-dom";
@@ -8,11 +8,8 @@ import { useCart } from "../../contexts/CartContext";
 
 const ItemDetail = ({ pictureUrl, title, price, id, stock, detail }) => {
     const { itemId } = useParams();
-
     const { cart, addItem, removeItem, } = useCart();
-
-    const [addedToCart, setAddedToCart] = useState(false);
-
+    const [addedToCart, setAddedToCart] = useState(false)
     const [counter, setCounter] = useState(1);
 
     const subir = () => {
@@ -24,46 +21,48 @@ const ItemDetail = ({ pictureUrl, title, price, id, stock, detail }) => {
     
     const cartAdd = (() => {
         let getItemById = productList.find(({ id }) => id === itemId);
-        getItemById.cantidad=counter
+        getItemById.cantidad = counter
         addItem(getItemById);
-        setAddedToCart(true)
     });
     const cartRemove = (() => {
         let getItemById = productList.find(({ id }) => id === itemId);
         removeItem(getItemById)
-        setAddedToCart(false)
         setCounter(1)
     });
     
-    // Para checkear que se setee el producto agregado al carrito, con su correspondiente cantidad
-    if (addedToCart === true) {
-        console.log(cart)
-    };
-    
+    useEffect(() => {
+        if (cart.some((product) => product.id === itemId)) {
+            setAddedToCart(true)
+        } else {
+            setAddedToCart(false)
+        }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+    }, [cart.length]);
+        
     return (
         <>
             <section className="detail">
-                <div className="detailImgContainer"> 
-                    <img src={pictureUrl} alt="Foto de Paleta" className="detailImg"/>
+                <div className="detailImgContainer">
+                    <img src={pictureUrl} alt="Foto de Paleta" className="detailImg" />
                 </div>
-                <div className="detailItem"> 
+                <div className="detailItem">
                     <h1 className="detailTitle">{title}</h1>
                     <p className="detailText">{detail}</p>
                     <h2 className="detailPrice">{price}</h2>
-                    { (addedToCart  === false) ? 
-                    <ItemCount onAdd={subir} onRemove={bajar} cantidad={counter} cartAdd={cartAdd} /> :
-                    <>
-                        <NavLink to={`/cart`} className="itemLinks">
-                            <button className="carritoBtn">Ver carrito</button>
-                        </NavLink>
-                        <button onClick={cartRemove} className="removeBtn">Quitar del carrito</button>
-                    </>
+                    {(addedToCart === false) ?
+                        <ItemCount onAdd={subir} onRemove={bajar} cantidad={counter} cartAdd={cartAdd} /> :
+                        <>
+                            <NavLink to={`/cart`} className="itemLinks">
+                                <button className="carritoBtn">Ver carrito</button>
+                            </NavLink>
+                            <button onClick={cartRemove} className="removeBtn">Quitar del carrito</button>
+                        </>
                     }
                     <p className="detailStock">Quedan {stock} en stock!</p>
-                </div> 
+                </div>
             </section>
         </>
     )
-}
+};
 
 export default ItemDetail;
