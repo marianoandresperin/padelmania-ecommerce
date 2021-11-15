@@ -48,12 +48,12 @@ const ItemDetail = ({ pictureUrl, title, price, id, stock, detail }) => {
                 <div className="detailItem">
                     <h1 className="detailTitle">{title}</h1>
                     <p className="detailText">{detail}</p>
-                    <h2 className="detailPrice">{price}</h2>
+                    <h2 className="detailPrice">$ {price}</h2>
                     {(addedToCart === false) ?
                         <ItemCount onAdd={subir} onRemove={bajar} cantidad={counter} cartAdd={cartAdd} /> :
                         <>
                             <NavLink to={`/cart`} className="itemLinks">
-                                <button className="carritoBtn">Ver carrito</button>
+                                <button className="carritoBtn">Ir al carrito</button>
                             </NavLink>
                             <button onClick={cartRemove} className="removeBtn">Quitar del carrito</button>
                         </>

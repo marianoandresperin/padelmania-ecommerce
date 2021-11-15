@@ -5,5 +5,19 @@
 .cartContainer {
     display: flex;
     justify-content: flex-end;
+    flex-direction: row;
     width: 25%;
+}
+
+.cartWidgetQuantity {
+    position: absolute;
+    font-size: 1.45rem;
+    text-decoration: none;
+    width: 2rem;
+    height: 2rem;
+    right: 3.5rem;
+    top: 0.4rem;
+    color: white;
+    background-color: #5f2a62;
+    border-radius: 1rem;
 }

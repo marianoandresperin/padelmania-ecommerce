@@ -7,7 +7,7 @@ const productList = [
         stock: 13,
         detail: "Paleta profesional de Padel color azul.",
         cantidad: 0,
-        price: "$29.999",
+        price: 29999,
         categoryId: "Novato"
     },
     {
@@ -17,7 +17,7 @@ const productList = [
         stock: 22,
         detail: "Paleta profesional de Padel color verde.",
         cantidad: 0,
-        price: "$69.999",
+        price: 69999,
         categoryId: "Avanzado"
     },
     {
@@ -27,7 +27,7 @@ const productList = [
         stock: 8,
         detail: "Paleta profesional de Padel color rojo.",
         cantidad: 0,
-        price: "$44.999",
+        price: 44999,
         categoryId: "Intermedio"
     },
     {
@@ -37,7 +37,7 @@ const productList = [
         stock: 2,
         detail: "Paleta profesional de Padel color negro.",
         cantidad: 0,
-        price: "$39.999",
+        price: 39999,
         categoryId: "Intermedio"
     },
     {
@@ -47,7 +47,7 @@ const productList = [
         stock: 5,
         detail: "Paleta profesional de Padel multicolor.",
         cantidad: 0,
-        price: "$79.999",
+        price: 79999,
         categoryId: "Avanzado"
     },
     {
@@ -57,7 +57,7 @@ const productList = [
         stock: 11,
         detail: "Paleta profesional de Padel color amarillo.",
         cantidad: 0,
-        price: "$19.999",
+        price: 19999,
         categoryId: "Novato"
     }
 ];
