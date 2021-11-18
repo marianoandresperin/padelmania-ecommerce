@@ -5,6 +5,8 @@ import ItemDetailContainer from './containers/ItemDetailContainer/ItemDetailCont
 import Cart from './components/Cart/Cart';
 import { BrowserRouter, Switch, Route, } from 'react-router-dom';
 import CartProvider from './contexts/CartContext';
+// eslint-disable-next-line no-unused-vars
+import { getFirebase } from './firebase';
 
 function App() {
 

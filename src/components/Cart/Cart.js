@@ -32,6 +32,11 @@ const Cart = () => {
         return total.reduce((a, b) => a + b, 0)
     };
 
+    const generateOrder = () => {
+        let order  = { buyer: { name: "Nombre", tel: 11331133, mail: "email" }, items: cart, totalPrice }
+        console.log(order)
+    }
+
     return (
         <>
             {(emptyCart === false) ?
@@ -51,7 +56,7 @@ const Cart = () => {
                     </div>
                     <div className="cartBtnContainer">
                         <button onClick={cartClear} className="cartClear">Vaciar el carrito</button>
-                        <button className="cartBuy">Terminar mi compra</button>
+                        <button onClick={generateOrder} className="cartBuy">Terminar mi compra</button>
                     </div>
                 </div> : <>
                 <h1 className="cartGreeting">El carrito está vacío!</h1>

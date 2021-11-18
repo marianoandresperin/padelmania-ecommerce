@@ -1,32 +1,36 @@
 import './ItemDetailContainer.css';
 import { useState, useEffect } from 'react';
-import productList from '../../components/Productos/Productos';
 import ItemDetail from '../../components/ItemDetail/ItemDetail.js';
 import Loader from '../../components/Loader/Loader';
 import { useParams } from 'react-router';
+import { doc, getDoc, getFirestore } from '@firebase/firestore';
+
 
 const ItemDetailContainer = () => {
     const { itemId } = useParams();
     const [itemDetail, setItemDetail] = useState(null);
-    const detail = new Promise((resolve, reject) => {
-        setTimeout(() => {
-            resolve(productList)
-        }, 2000);
-    });
+    const [loading, setLoading] = useState(false);
+
     useEffect(() => {
-        detail.then((result) => {
-            let found = result.find(({ id }) => id === itemId )
-            setItemDetail(found)
-            }, (err) => {
-                console.log("Ocurrió un error al cargar el detalle del producto: " + err)
-            }
-        )
-    });
-   
+        setLoading(true);
+        const db = getFirestore();
+        const itemRef = doc(db, 'products', itemId);
+        getDoc(itemRef)
+            .then((snapshot) => {
+                    if (snapshot.exists()) {
+                        setItemDetail(snapshot.data())
+                    }
+            })
+            .catch((err) => {
+                console.log('Ocurrió un error al obtener los productos: ' + err);
+            })
+            .then(setLoading(false))
+        }, [itemId]);
+
     return (
         <>
             <div className="itemDetailContainer">
-                {itemDetail ? (
+                { !loading && itemDetail ? (
                     <ItemDetail
                     key={itemDetail.id}
                     title={itemDetail.title}
@@ -36,8 +40,8 @@ const ItemDetailContainer = () => {
                     detail={itemDetail.detail}
                     cartAdd={itemDetail.cartAdd}
                     id={itemDetail.id}
-                    />
-                ) : (<Loader />)
+                    />)
+                    : (<Loader />)
                 }
             </div>
         </>
