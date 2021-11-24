@@ -5,7 +5,6 @@ import Loader from '../../components/Loader/Loader';
 import { useParams} from 'react-router-dom';
 import { collection, getFirestore, getDocs } from 'firebase/firestore';
 
-
 const ItemListContainer = ({ greeting, category }) => {
     const [products, setProducts] = useState(null);
     const [loading, setLoading] = useState(false);
@@ -18,7 +17,6 @@ const ItemListContainer = ({ greeting, category }) => {
             .then((snapshot) => {
                 setLoading(true);
                 let unfiltered = snapshot.docs.map((doc) => doc.data());
-                console.log("se ejecuto la promesa");
                 switch (categoryId) {
                     case "Novato":
                         setProducts(unfiltered.filter(prod => prod.categoryId === "Novato"));

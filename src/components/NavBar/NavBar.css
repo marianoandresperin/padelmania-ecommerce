@@ -32,6 +32,7 @@
 
 .links {
     text-decoration: none;
+    text-decoration-color: none;
 }
 .links:hover{
     color: #a976c3;

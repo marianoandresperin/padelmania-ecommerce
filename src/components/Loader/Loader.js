@@ -1,11 +1,11 @@
 import "./Loader.css"
 import loaderImg from "../../assets/loader.gif"
 
-const Loader = () => {
+const Loader = (size) => {
     return (
         <>
-            <div className="loader">
-                <img src={loaderImg} alt="Loading.."></img>
+            <div>
+                <img src={loaderImg} className="loaderImg" alt="Loading.."></img>
             </div>
         </>
     )

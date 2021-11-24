@@ -4,7 +4,7 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: 0.5rem;
+    gap: 1rem;
 }
 
 .cartGreeting {
@@ -12,6 +12,20 @@
     font-family: 'Roboto', sans-serif;
     font-style: italic;
     color: #a976c3;
+}
+
+.cartPurchaseId {
+    font-size: 1.5rem;
+    font-family: 'Roboto', sans-serif;
+    color: #a976c3;
+}
+
+.cartPurchaseId span {
+    font-size: 1.5rem;
+    font-family: 'Roboto', sans-serif;
+    font-style: italic;
+    text-decoration: underline;
+    color: #5f2a62;
 }
 
 .cartItem {
@@ -24,7 +38,6 @@
     border: 0.1rem solid #a976c3;
     border-radius: 15px;
     padding: 1rem;
-    margin: 0.5rem 0 0.5rem 0;
 }
 
 .cartPicture {
@@ -114,4 +127,95 @@
     width: 60%;
     align-items: center;
     padding: 1rem;
+}
+
+.modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width:100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.6);
+}
+
+.modalTitle {
+    font-size: 2rem;
+    font-family: 'Roboto', sans-serif;
+    color: #a976c3;
+}
+
+.modal-main {
+    border: 0.1rem solid #5f2a62;
+    border-radius: 10px;
+    position:fixed;
+    background: white;
+    width: 60%;
+    height: 60%;
+    top:50%;
+    left:50%;
+    transform: translate(-50%,-50%);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.modalInputs {
+    border: 0.1rem solid #a976c3;
+    border-radius: 10px;
+    margin: 1rem;
+    width: 80%;
+    height: 2rem;
+    font-family: 'Roboto', sans-serif;
+    font-size: 1.2rem;
+}
+
+.modalBtnContainer {
+    display: flex;
+    flex-direction: row;
+    gap: 10rem;
+}
+
+.modalClose {
+    font-size: 1.25rem;
+    color: white;
+    width: 15rem;
+    height: 3rem;
+    background-color: rgb(219, 21, 21);
+    border: 0.1rem solid rgb(219, 21, 21);
+    border-radius: 10px;
+    text-align: center;
+    cursor: pointer;
+    font-family: 'Roboto', sans-serif;
+    margin: 2.5rem 0 1rem 0;
+}
+
+.modalClose:hover {
+    background-color: rgb(138, 6, 6);
+}
+
+.modalConfirm {
+    font-size: 1.25rem;
+    color: white;
+    width: 15rem;
+    height: 3rem;
+    background-color: rgb(19, 163, 26);
+    border: 0.1rem solid rgb(19, 163, 26);
+    border-radius: 10px;
+    text-align: center;
+    cursor: pointer;
+    font-family: 'Roboto', sans-serif;
+    margin: 2.5rem 0 1rem 0;
+}
+
+.modalConfirm:hover {
+    background-color: rgb(11, 105, 16);
+}
+
+.display-block {
+    display: block;
+}
+
+.display-none {
+    display: none;
 }
