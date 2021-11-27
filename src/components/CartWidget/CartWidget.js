@@ -1,5 +1,5 @@
 import './CartWidget.css'
-import cartIcon from './cartIcon.png'
+import cartIcon from '../../assets/cartIcon.png'
 import { NavLink } from 'react-router-dom';
 import { useCart } from '../../contexts/CartContext';
 import { useEffect, useState } from 'react';
@@ -20,10 +20,12 @@ const CartWidget = () => {
 
     return (
         <div className="cartContainer">
-            <NavLink to={`/cart`} >
-                <h1 className="cartWidgetQuantity">{totalQuantity}</h1>
-                <img src={cartIcon} alt="Cart Icon" className="cartIcon"></img>
-            </NavLink>
+            <div className='cartLinkContainer'>
+                <NavLink className='cartLink' to={`/cart`} >
+                    <h1 className="cartWidgetQuantity">{totalQuantity}</h1>
+                    <img src={cartIcon} alt="Cart Icon" className="cartIcon"></img>
+                </NavLink>
+            </div>
         </div>
     )
 }
