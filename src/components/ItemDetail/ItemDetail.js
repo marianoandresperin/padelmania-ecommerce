@@ -2,22 +2,28 @@ import "./ItemDetail.css"
 import ItemCount from "../ItemCount/ItemCount";
 import { useEffect, useState } from "react";
 import { useParams } from "react-router";
-import productList from "../Productos/Productos";
 import { NavLink } from "react-router-dom";
 import { useCart } from "../../contexts/CartContext";
+import { collection, getFirestore, getDocs } from 'firebase/firestore';
 
 const ItemDetail = ({ pictureUrl, title, price, id, stock, detail }) => {
     const { itemId } = useParams();
     const { cart, addItem, removeItem, } = useCart();
     const [addedToCart, setAddedToCart] = useState(false)
     const [counter, setCounter] = useState(1);
+    const [productList, setProductList] = useState(null)
 
+    const db = getFirestore();
+    
+    
     const subir = () => {
         stock === counter ? alert("No hay más stock disponible!") : setCounter(counter + 1);
     };
     const bajar = () => {
         counter >= 1 ? setCounter(counter - 1) : alert("La cantidad mínima válida es 0!");
     };
+
+    
     
     const cartAdd = (() => {
         let getItemById = productList.find(({ id }) => id === itemId);
@@ -31,6 +37,13 @@ const ItemDetail = ({ pictureUrl, title, price, id, stock, detail }) => {
     });
     
     useEffect(() => {
+        getDocs(collection(db, 'products'))
+        .then((snapshot) => {
+            setProductList(snapshot.docs.map((doc) => doc.data()))
+        })
+        .catch((err) => {
+        console.log('Ocurrió un error al obtener los productos: ' + err)
+    })
         if (cart.some((product) => product.id === itemId)) {
             setAddedToCart(true)
         } else {

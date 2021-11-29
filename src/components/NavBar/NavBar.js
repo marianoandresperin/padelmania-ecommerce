@@ -2,15 +2,16 @@ import CartWidget from '../CartWidget/CartWidget.js';
 import './NavBar.css';
 import { Link, NavLink } from 'react-router-dom';
 import { useCart } from '../../contexts/CartContext.js';
+import logoImg from "../../assets/padelmania logo.png"
 
 const NavBar = () => {
     const { cart } = useCart();
     return (
         <nav className="nav">
             <div className="logoContainer">
-                <h1>
-                <Link to={'/'} className="links">PadelManía</Link>
-                </h1>
+                <Link to={'/'} className="links">
+                    <img src={logoImg} alt="Padelmania Logo" className="logoImg"></img>
+                </Link>
             </div>
             <ul className="navUl">
                 <li className="navLi"><Link to={'/'} className="links">Home</Link></li>
