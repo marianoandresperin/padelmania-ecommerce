@@ -15,15 +15,12 @@ const ItemDetail = ({ pictureUrl, title, price, id, stock, detail }) => {
 
     const db = getFirestore();
     
-    
     const subir = () => {
         stock === counter ? alert("No hay más stock disponible!") : setCounter(counter + 1);
     };
     const bajar = () => {
         counter >= 1 ? setCounter(counter - 1) : alert("La cantidad mínima válida es 0!");
     };
-
-    
     
     const cartAdd = (() => {
         let getItemById = productList.find(({ id }) => id === itemId);

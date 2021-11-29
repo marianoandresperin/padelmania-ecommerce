@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,300;1,300&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,200;0,300;0,400;0,500;1,200;1,300;1,400;1,500&display=swap');
 
 .container {
     padding: 2rem 5rem 2rem 5rem;
@@ -10,7 +10,7 @@
 
 .greeting {
     font-size: 3rem;
-    font-family: 'Roboto', sans-serif;
+    font-family: 'Montserrat', sans-serif;
     font-style: italic;
-    color: #a976c3;
+    color: #8c52ff;
 }

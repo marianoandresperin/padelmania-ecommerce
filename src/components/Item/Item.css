@@ -1,9 +1,9 @@
-@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,300;1,300&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,200;0,300;0,400;0,500;1,200;1,300;1,400;1,500&display=swap');
 
 .item {
-    border: 0.1rem solid #a976c3;
+    border: 0.1rem solid #cb6ce6;
     border-radius: 15px;
-    width: 12rem;
+    width: 15rem;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -20,43 +20,44 @@
 
 .itemTitle {
     font-size: 1.5rem;
-    font-family: 'Roboto', sans-serif;
-    color: #5f2a62;
+    font-family: 'Montserrat', sans-serif;
+    color: #8c52ff;
 }
 
 .itemTitle:hover {
-    color: #a976c3;
+    color: #cb6ce6;
 }
 
 .itemPrice {
     font-size: 1.25rem;
-    font-family: 'Roboto', sans-serif;
-    color: #5f2a62;
+    font-family: 'Montserrat', sans-serif;
+    color: #8c52ff;
 }
 
 .itemPrice:hover {
-    color: #a976c3;
+    color: #cb6ce6;
 }
 
 .btnVerMas {
     font-size: 0.9rem;
     color: white;
-    width: 8rem;
+    width: 10rem;
     height: 2rem;
-    background-color: #a976c3;
-    border: 0.1rem solid #a976c3;
+    background-color: #8c52ff;
+    border: 0.1rem solid #8c52ff;
     border-radius: 10px;
     text-align: center;
     cursor: pointer;
-    font-family: 'Roboto', sans-serif;
+    font-family: 'Montserrat', sans-serif;
 }
 
 .btnVerMas:hover {
-    background-color: #5f2a62;
-    border: 0.1rem solid #5f2a62;
+    
+    background-color: #cb6ce6;
+    border: 0.1rem solid #cb6ce6;
 }
 
 .stock {
     font-size: 0.8rem;
-    color: #a976c3;
+    color: #8c52ff;
 }
