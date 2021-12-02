@@ -28,7 +28,7 @@ const Cart = () => {
     }, [cart]);
 
     const cartRemove = ((buttonId) => {
-        let getItemById = cart.find(({ id }) => id == buttonId.target.id);
+        let getItemById = cart.find(({ id }) => id === buttonId.target.id);
         removeItem(getItemById);
     });
 

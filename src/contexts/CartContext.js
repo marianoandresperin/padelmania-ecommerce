@@ -6,7 +6,7 @@ const CartProvider = ({ children }) => {
     const [cart, setCart] = useState([]);
     
     const addItem = (item) => {
-        const isInCart = cart.some((product) => product.id == item.id);
+        const isInCart = cart.some((product) => product.id === item.id);
         
         if (!isInCart) {
             setCart([...cart, item]);

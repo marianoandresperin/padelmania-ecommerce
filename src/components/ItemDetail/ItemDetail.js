@@ -23,7 +23,7 @@ const ItemDetail = ({ pictureUrl, title, price, id, stock, detail, cantidad }) =
         .catch((err) => {
             console.log('Ocurrió un error al obtener los productos: ' + err)
         })
-        if (cart.some((product) => product.id == itemId)) {
+        if (cart.some((product) => product.id === itemId)) {
             setAddedToCart(true)
         } else {
             setAddedToCart(false)
@@ -39,13 +39,13 @@ const ItemDetail = ({ pictureUrl, title, price, id, stock, detail, cantidad }) =
     };
     
     const cartAdd = (() => {
-        let getItemById = productList.find(({id}) => id == itemId);
+        let getItemById = productList.find(({id}) => id === itemId);
         getItemById.cantidad = counter
         addItem(getItemById);
     });
 
     const cartRemove = (() => {
-        let getItemById = productList.find(({ id }) => id == itemId);
+        let getItemById = productList.find(({ id }) => id === itemId);
         removeItem(getItemById)
         setCounter(1)
     });
