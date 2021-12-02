@@ -39,6 +39,7 @@ const ItemDetailContainer = () => {
                     stock={itemDetail.stock}
                     detail={itemDetail.detail}
                     cartAdd={itemDetail.cartAdd}
+                    cantidad={itemDetail.cantidad}
                     id={itemDetail.id}
                     />)
                     : (<Loader />)

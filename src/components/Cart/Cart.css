@@ -9,18 +9,21 @@
 
 .cartGreeting {
     font-size: 3rem;
-font-family: 'Montserrat', sans-serif;    font-style: italic;
+    font-family: 'Montserrat', sans-serif;
+    font-style: italic;
     color: #cb6ce6;
 }
 
 .cartPurchaseId {
     font-size: 1.5rem;
-font-family: 'Montserrat', sans-serif;    color: #cb6ce6;
+    font-family: 'Montserrat', sans-serif;
+    color: #cb6ce6;
 }
 
 .cartPurchaseId span {
     font-size: 1.5rem;
-font-family: 'Montserrat', sans-serif;    font-style: italic;
+    font-family: 'Montserrat', sans-serif;
+    font-style: italic;
     text-decoration: underline;
     color: #8c52ff;
 }
@@ -31,10 +34,23 @@ font-family: 'Montserrat', sans-serif;    font-style: italic;
     height: 10rem;
     width: 60%;
     align-items: center;
-    justify-content: space-between;
+    justify-content: space-evenly;
     border: 0.1rem solid #cb6ce6;
     border-radius: 15px;
     padding: 1rem;
+}
+
+.cartPictureContainer {
+    width: 20%;
+    margin-right: 2rem;
+}
+
+.cartData {
+    width: 80%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
 }
 
 .cartPicture {
@@ -43,12 +59,14 @@ font-family: 'Montserrat', sans-serif;    font-style: italic;
 
 .cartTitle {
     font-size: 1.5rem;
-font-family: 'Montserrat', sans-serif;    color: #8c52ff;
+    font-family: 'Montserrat', sans-serif;
+    color: #8c52ff;
 }
 
 .cartPrice {
     font-size: 1.25rem;
-font-family: 'Montserrat', sans-serif;    color: #8c52ff;
+    font-family: 'Montserrat', sans-serif;
+    color: #8c52ff;
 }
 
 .cartQuantity {
@@ -72,7 +90,9 @@ font-family: 'Montserrat', sans-serif;    color: #8c52ff;
     border-radius: 10px;
     text-align: center;
     cursor: pointer;
-font-family: 'Montserrat', sans-serif;}
+    font-family: 'Montserrat', sans-serif;
+}
+
 .cartRemove:hover {
     background-color: rgb(138, 6, 6);
 }
@@ -87,7 +107,8 @@ font-family: 'Montserrat', sans-serif;}
     border-radius: 10px;
     text-align: center;
     cursor: pointer;
-font-family: 'Montserrat', sans-serif;    margin: 1rem 0 1rem 0;
+    font-family: 'Montserrat', sans-serif;
+    margin: 1rem 0 1rem 0;
 }
 
 .cartClear:hover {
@@ -104,7 +125,8 @@ font-family: 'Montserrat', sans-serif;    margin: 1rem 0 1rem 0;
     border-radius: 10px;
     text-align: center;
     cursor: pointer;
-font-family: 'Montserrat', sans-serif;    margin: 1rem 0 1rem 0;
+    font-family: 'Montserrat', sans-serif;
+    margin: 1rem 0 1rem 0;
 }
 
 .cartBuy:hover {
@@ -132,7 +154,8 @@ font-family: 'Montserrat', sans-serif;    margin: 1rem 0 1rem 0;
 
 .modalTitle {
     font-size: 2rem;
-font-family: 'Montserrat', sans-serif;    color: #cb6ce6;
+    font-family: 'Montserrat', sans-serif;
+    color: #cb6ce6;
 }
 
 .modal-main {
@@ -157,7 +180,8 @@ font-family: 'Montserrat', sans-serif;    color: #cb6ce6;
     margin: 1rem;
     width: 80%;
     height: 2rem;
-font-family: 'Montserrat', sans-serif;    font-size: 1.2rem;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 1.2rem;
 }
 
 .modalBtnContainer {
@@ -176,7 +200,8 @@ font-family: 'Montserrat', sans-serif;    font-size: 1.2rem;
     border-radius: 10px;
     text-align: center;
     cursor: pointer;
-font-family: 'Montserrat', sans-serif;    margin: 2.5rem 0 1rem 0;
+    font-family: 'Montserrat', sans-serif;
+    margin: 2.5rem 0 1rem 0;
 }
 
 .modalClose:hover {
@@ -193,7 +218,8 @@ font-family: 'Montserrat', sans-serif;    margin: 2.5rem 0 1rem 0;
     border-radius: 10px;
     text-align: center;
     cursor: pointer;
-font-family: 'Montserrat', sans-serif;    margin: 2.5rem 0 1rem 0;
+    font-family: 'Montserrat', sans-serif;
+    margin: 2.5rem 0 1rem 0;
 }
 
 .modalConfirm:hover {
@@ -206,4 +232,134 @@ font-family: 'Montserrat', sans-serif;    margin: 2.5rem 0 1rem 0;
 
 .display-none {
     display: none;
+}
+
+@media(max-width:768px) {
+    .cartItem {
+        height: 15rem;
+        width: 90%;
+    }
+
+    .cartPicture {
+        width: 12.5rem;
+    }
+
+    .cartTitle {
+        font-size: 2.2rem;
+        margin-block: 0;
+    }
+
+    .cartPrice {
+        font-size: 1.75rem;
+        margin-block: 0;
+    }
+
+    .cartQuantity {
+        font-size: 1.75rem;
+        margin-block: 0;
+    }
+
+    .cartRemove {
+        font-size: 1.25rem;
+        width: 12rem;
+        height: 2.5rem;
+    }
+
+    .cartData {
+        flex-direction: column;
+        align-items: flex-end;
+        gap: 2rem;
+    }
+    .cartTotal {
+        height: 2rem;
+        width: 90%;
+    }
+
+    .modal-main {
+        width: 90%;
+        height: 70%;
+    }
+
+    .modalTitle {
+        width: 70%;
+        margin-bottom: 3rem;
+    }
+
+    .modalBtnContainer {
+        gap: 5rem;
+    }
+}
+
+@media(max-width:480px) {
+    .cartItem {
+        height: 12rem;
+        width: 90%;
+        padding: 0.5rem;
+    }
+
+    .cartPictureContainer {
+        width: 20%;
+        margin: 0;
+    }
+
+    .cartPicture {
+        width: 10rem;
+    }
+
+    .cartTitle {
+        font-size: 1.75rem;
+    }
+
+    .cartPrice {
+        font-size: 1.35rem;
+    }
+
+    .cartQuantity {
+        font-size: 1.3rem;
+    }
+
+    .cartRemove {
+        font-size: 1rem;
+        width: 10rem;
+    }
+
+    .cartData {
+        gap: 1rem;
+        width: 80%;
+    }
+
+    .cartBtnContainer {
+        flex-direction: column;
+        gap: 0.5rem;
+    }
+    
+    .modal-main {
+        width: 90%;
+        height: 95%;
+    }
+
+    .modalTitle {
+        width: 85%;
+        margin-bottom: 2rem;
+        font-size: 1.5rem;
+        letter-spacing: 0.2rem;
+    }
+
+    .modalBtnContainer {
+        display: flex;
+        flex-direction: column;
+        gap: 0;
+    }
+
+    .modalConfirm {
+        width: 15rem;
+        height: 3rem;
+        margin: 0.5rem;
+    }
+
+    .modalClose {
+        width: 15rem;
+        height: 3rem;
+        margin: 1.5rem 0.5rem;
+    }
 }

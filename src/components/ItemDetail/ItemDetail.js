@@ -6,15 +6,31 @@ import { NavLink } from "react-router-dom";
 import { useCart } from "../../contexts/CartContext";
 import { collection, getFirestore, getDocs } from 'firebase/firestore';
 
-const ItemDetail = ({ pictureUrl, title, price, id, stock, detail }) => {
+const ItemDetail = ({ pictureUrl, title, price, id, stock, detail, cantidad }) => {
     const { itemId } = useParams();
     const { cart, addItem, removeItem, } = useCart();
     const [addedToCart, setAddedToCart] = useState(false)
-    const [counter, setCounter] = useState(1);
     const [productList, setProductList] = useState(null)
+    const [counter, setCounter] = useState(1);
 
     const db = getFirestore();
     
+    useEffect(() => {
+        getDocs(collection(db, 'products'))
+            .then((snapshot) => {
+                setProductList(snapshot.docs.map((doc) => doc.data()))
+        })
+        .catch((err) => {
+            console.log('Ocurrió un error al obtener los productos: ' + err)
+        })
+        if (cart.some((product) => product.id == itemId)) {
+            setAddedToCart(true)
+        } else {
+            setAddedToCart(false)
+        }
+        // eslint-disable-next-line react-hooks/exhaustive-deps
+        }, [cart.length]);
+
     const subir = () => {
         stock === counter ? alert("No hay más stock disponible!") : setCounter(counter + 1);
     };
@@ -23,32 +39,17 @@ const ItemDetail = ({ pictureUrl, title, price, id, stock, detail }) => {
     };
     
     const cartAdd = (() => {
-        let getItemById = productList.find(({ id }) => id === itemId);
+        let getItemById = productList.find(({id}) => id == itemId);
         getItemById.cantidad = counter
         addItem(getItemById);
     });
+
     const cartRemove = (() => {
-        let getItemById = productList.find(({ id }) => id === itemId);
+        let getItemById = productList.find(({ id }) => id == itemId);
         removeItem(getItemById)
         setCounter(1)
     });
     
-    useEffect(() => {
-        getDocs(collection(db, 'products'))
-        .then((snapshot) => {
-            setProductList(snapshot.docs.map((doc) => doc.data()))
-        })
-        .catch((err) => {
-        console.log('Ocurrió un error al obtener los productos: ' + err)
-    })
-        if (cart.some((product) => product.id === itemId)) {
-            setAddedToCart(true)
-        } else {
-            setAddedToCart(false)
-        }
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-    }, [cart.length]);
-        
     return (
         <>
             <section className="detail">
@@ -62,13 +63,16 @@ const ItemDetail = ({ pictureUrl, title, price, id, stock, detail }) => {
                     {(addedToCart === false) ?
                         <ItemCount onAdd={subir} onRemove={bajar} cantidad={counter} cartAdd={cartAdd} /> :
                         <>
-                            <NavLink to={`/cart`} className="itemLinks">
-                                <button className="carritoBtn">Ir al carrito</button>
-                            </NavLink>
-                            <button onClick={cartRemove} className="removeBtn">Quitar del carrito</button>
+                            <p className="detailStock">Tenés {counter} {counter > 1 ? 'unidades' : 'unidad'} en el carrito.</p>
+                            <div className="btnContainer">
+                                <NavLink to={`/cart`} className="itemLinks">
+                                    <button className="carritoBtn">Ir al carrito</button>
+                                </NavLink>
+                                <button onClick={cartRemove} className="removeBtn">Quitar del carrito</button>
+                            </div>
                         </>
                     }
-                    <p className="detailStock">Quedan {stock} en stock!</p>
+                    <p className="detailStock"> {stock > 1 ? 'Quedan' : 'Queda'} {stock} en stock!</p>
                 </div>
             </section>
         </>

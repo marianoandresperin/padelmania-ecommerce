@@ -28,7 +28,7 @@ const Cart = () => {
     }, [cart]);
 
     const cartRemove = ((buttonId) => {
-        let getItemById = cart.find(({ id }) => id === buttonId.target.id);
+        let getItemById = cart.find(({ id }) => id == buttonId.target.id);
         removeItem(getItemById);
     });
 
@@ -75,11 +75,15 @@ const Cart = () => {
                             <h1 className="cartGreeting">Carrito de compras</h1>
                             {cart.map(n =>
                                 <div className="cartItem" >
-                                    <img src={n.pictureUrl} alt="Foto de Paleta" className="cartPicture" />
-                                    <h3 className="cartTitle">{n.title}</h3>
-                                    <h4 className="cartPrice">Precio: $ {n.price}</h4>
-                                    <p className="cartQuantity">Cantidad: x{n.cantidad}</p>
-                                    <button id={n.id} onClick={cartRemove} className="cartRemove">Eliminar</button>
+                                    <div className="cartPictureContainer">
+                                        <img src={n.pictureUrl} alt="Foto de Paleta" className="cartPicture" />
+                                    </div>
+                                    <div className="cartData">
+                                        <h3 className="cartTitle">{n.title}</h3>
+                                        <h4 className="cartPrice">Precio: $ {n.price}</h4>
+                                        <p className="cartQuantity">Cantidad: x{n.cantidad}</p>
+                                        <button id={n.id} onClick={cartRemove} className="cartRemove">Eliminar</button>
+                                    </div>
                                 </div>
                             )}
                             <div className="cartTotal">

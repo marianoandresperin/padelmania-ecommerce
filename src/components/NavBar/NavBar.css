@@ -1,6 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,200;0,300;0,400;0,500;1,200;1,300;1,400;1,500&display=swap');
 
 .nav {
+    /* position: fixed; */
     width: 100%;
     box-sizing: border-box;
     display: flex;
@@ -29,7 +30,6 @@
 }
 
 .navUl {
-    list-style: none;
     display: flex;
     justify-content: space-evenly;
     width: 50%;
@@ -38,6 +38,7 @@
 
 .navLi {
     font-family: 'Montserrat', sans-serif;
+    list-style: none;
     font-weight: 400;
     font-size: 1.5rem;
     color: #8c52ff;
@@ -45,6 +46,7 @@
 
 .links {
     text-decoration: none;
+    transition: 0.7s ease;
 }
 
 .links:visited{
@@ -53,4 +55,79 @@
 
 .links:hover{
     color: #cb6ce6;
+}
+
+.hamburger {
+    display: none;
+    cursor: pointer;
+}
+
+.bar {
+    display: block;
+    width: 25px;
+    height: 3px;
+    margin: 5px auto;
+    -webkit-transition: all 0.3s ease-in-out;
+    transition: all 0.3s ease-in-out;
+    background-color: #8c52ff;
+}
+
+@media(max-width:768px) {
+    .logoContainer {
+        width: 20%;
+    }
+    
+    .logo {
+        width: 100%;
+        height: auto;
+    }
+    
+    .hamburger {
+        display: block;
+        width: 10%;
+    }
+
+    .hamburger.active .bar:nth-child(2) {
+        opacity: 0;
+    }
+
+    .hamburger.active .bar:nth-child(1) {
+        transform: translateY(8px) rotate(45deg);
+    }
+
+    .hamburger.active .bar:nth-child(3) {
+        transform: translateY(-8px) rotate(-45deg);
+    }
+
+    .navUl {
+        position: absolute;
+        left: -100%;
+        top: 70px;
+        flex-direction: column;
+        gap: 0;
+        background-color: #c9e265;
+        text-align: center;
+        width: 100%;
+        transition: 0.3s;
+    }
+
+    .active {
+        left: 0;
+    }
+
+    .navLi {
+        margin: 16px 0;
+        font-size: 2rem;
+    }
+}
+
+@media(max-width:480px) {
+    .logoContainer {
+        width: 40%;
+    }
+
+    .hamburger {
+        display: block;
+        width: 15%;
+    }
 }

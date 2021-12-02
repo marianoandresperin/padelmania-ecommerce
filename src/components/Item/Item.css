@@ -14,7 +14,7 @@
 }
 
 .itemPicture {
-    width: 10rem;
+    width: 100%;
     margin-top: 1rem;
 }
 
@@ -60,4 +60,48 @@
 .stock {
     font-size: 0.8rem;
     color: #8c52ff;
+}
+
+@media(max-width:768px) {
+    .item {
+        width: 14rem;
+    }
+
+    .itemTitle {
+        font-size: 1.75rem;
+    }
+
+    .itemPrice {
+        font-size: 1.5rem;
+    }
+
+    .btnVerMas {
+        font-size: 1.2rem;
+        width: 12rem;
+        height: 2.5rem;
+    }
+
+    .stock {
+        font-size: 1.25rem;
+    }
+}
+
+@media(max-width:480px) {
+    .item {
+        width: 90%;
+    }
+
+    .itemPrice {
+        font-size: 1.25rem;
+    }
+
+    .btnVerMas {
+        font-size: 1.2rem;
+        width: 15rem;
+        height: 2rem;
+    }
+
+    .stock {
+        font-size: 1.2rem;
+    }
 }

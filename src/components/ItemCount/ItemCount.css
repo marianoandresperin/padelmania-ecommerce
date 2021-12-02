@@ -12,6 +12,8 @@
 
 .cantidad {
     margin: 0 1rem 0 1rem;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 500;
 }
 
 .counterBtn {
@@ -20,6 +22,7 @@
     height: 2rem;
     text-align: center;
     cursor: pointer;
+    font-family: 'Montserrat', sans-serif;
 }
 
 .minusBtn {
@@ -41,4 +44,38 @@
 .counterBtn:hover {
     background-color: #8c52ff;
     color: white;
+}
+
+@media(max-width:768px) {
+    .counter {
+        margin: 0.5rem 0;
+    }
+    
+    .counterBtn {
+        font-size: 1.75rem;
+        width: 2.5rem;
+        height: 2.5rem;
+    }
+
+    .cantidad {
+        margin: 0 1.25rem 0 1.25rem;
+        font-size: 1.5rem;
+    }
+}
+
+@media(max-width:480px) {
+    .counter {
+        margin: 1rem 0;
+    }
+    
+    .counterBtn {
+        font-size: 2rem;
+        width: 3rem;
+        height: 3rem;
+    }
+
+    .cantidad {
+        margin: 0 1.5rem 0 1.5rem;
+        font-size: 2rem;
+    }
 }

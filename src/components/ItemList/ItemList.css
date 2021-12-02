@@ -4,5 +4,12 @@
     flex-direction: row;
     flex-wrap: wrap;
     justify-content: space-around;
-    row-gap: 2rem;
+    row-gap: 1rem;
+}
+
+@media(max-width:768px) {
+    .itemList {
+        width: 100%;
+        justify-content: space-evenly;
+    }
 }

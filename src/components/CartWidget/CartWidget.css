@@ -26,3 +26,31 @@
     margin: 0;
     color: #8c52ff;
 }
+
+@media(max-width:768px) {
+    .cartContainer { 
+        width: 70%;
+    }
+
+    .cartIcon {
+        width: 2.75rem;
+    }
+
+    .cartWidgetQuantity {
+        font-size: 1.4rem;
+    }
+}
+
+@media(max-width:480px) {
+    .cartContainer { 
+        width: 40%;
+    }
+
+    .cartIcon {
+        width: 2rem;
+    }
+
+    .cartWidgetQuantity {
+        font-size: 1.25rem;
+    }
+}

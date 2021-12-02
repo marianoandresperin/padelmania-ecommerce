@@ -15,10 +15,11 @@
 .detailImgContainer {
     margin: 2rem 0 2rem 0;
     width: 40%;
+    height: 40%;
 }
 
 .detailImg {
-    width: 100%;
+    height: 100%;
 }
 
 .detailItem {
@@ -65,11 +66,17 @@
     color: #cb6ce6;
 }
 
+.btnContainer {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
 .carritoBtn {
-    font-size: 0.9rem;
+    font-size: 1.2rem;
     color: white;
-    width: 8rem;
-    height: 2rem;
+    width: 12rem;
+    height: 2.5rem;
     background-color: rgb(19, 163, 26);
     border: 0.1rem solid rgb(19, 163, 26);
     border-radius: 10px;
@@ -84,19 +91,110 @@
 }
 
 .removeBtn {
-    font-size: 0.9rem;
+    font-size: 1.2rem;
     color: white;
-    width: 8rem;
-    height: 2rem;
+    width: 12rem;
+    height: 2.5rem;
     background-color: rgb(219, 21, 21);
     border: 0.1rem solid rgb(219, 21, 21);
     border-radius: 10px;
     text-align: center;
     cursor: pointer;
     font-family: 'Montserrat', sans-serif;
-    margin: 0.5rem;
 }
 
 .removeBtn:hover {
     background-color: rgb(138, 6, 6);
+}
+
+@media(max-width:768px) {
+    .detail {
+        margin: 2rem 0;
+        width: 95%;
+        height: 35rem;
+    }
+
+    .detailTitle {
+        margin-block: 0.5rem;
+    }
+
+    .detailText {
+        font-size: 1.65rem;
+        margin-block: 0.5rem;
+    }
+
+   .detailPrice {
+        margin-block: 0.5rem;
+    }
+
+    .btnContainer {
+        flex-direction: column;
+        column-gap: 4rem;
+    }
+
+    .carritoBtn {
+        font-size: 1.25rem;
+        width: 15rem;
+        height: 3rem;
+        margin-bottom: 1rem;
+    }
+
+    .removeBtn {
+        font-size: 1.25rem;
+        width: 15rem;
+        height: 3rem;
+    }
+
+    .detailStock {
+        font-size: 1.25rem;
+    }
+}
+
+@media(max-width:480px) {
+    .detail {
+        margin: 1.25rem 0 1rem 0;
+        width: 95%;
+        height: 40rem;
+        flex-direction: column;
+    }
+
+    .detailImgContainer {
+        margin: 0;
+        padding: 1rem;
+        width: 80%;
+    }
+
+    .detailItem {
+        height: 60%;
+        width: 90%;
+        border: none;
+        padding-bottom: 1rem;
+    }
+
+    .detailTitle {
+        font-size: 2rem;
+    }
+
+    .detailText {
+        font-size: 1.25rem;
+    }
+
+   .detailPrice {
+        font-size: 1.5rem;
+    }
+
+    .carritoBtn {
+        width: 12rem;
+        margin: 0.5rem 0;
+    }
+
+    .removeBtn {
+        width: 12rem;
+        margin: 0.5rem;
+    }
+
+    .detailStock {
+        font-size: 1.2rem;
+        margin: 0;
+    }
 }
