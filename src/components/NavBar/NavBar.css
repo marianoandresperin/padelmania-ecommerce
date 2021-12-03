@@ -41,12 +41,12 @@
     list-style: none;
     font-weight: 400;
     font-size: 1.5rem;
-    color: #8c52ff;
 }
 
 .links {
     text-decoration: none;
     transition: 0.7s ease;
+    color: #8c52ff;
 }
 
 .links:visited{
