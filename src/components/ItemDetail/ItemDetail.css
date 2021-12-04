@@ -13,13 +13,14 @@
 }
 
 .detailImgContainer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
     margin: 2rem 0 2rem 0;
-    width: 40%;
-    height: 40%;
 }
 
 .detailImg {
-    height: 100%;
+    height: 25rem;
 }
 
 .detailItem {
@@ -114,6 +115,10 @@
         height: 35rem;
     }
 
+    .detailImg {
+        height: 24rem;
+    }
+
     .detailTitle {
         margin-block: 0.5rem;
     }
@@ -161,6 +166,7 @@
     .detailImgContainer {
         margin: 0;
         padding: 1rem;
+        height: 40%;
         width: 80%;
     }
 
@@ -169,6 +175,10 @@
         width: 90%;
         border: none;
         padding-bottom: 1rem;
+    }
+
+    .detailImg {
+        height: 100%;
     }
 
     .detailTitle {

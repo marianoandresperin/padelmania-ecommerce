@@ -67,10 +67,6 @@
         width: 14rem;
     }
 
-    .itemTitle {
-        font-size: 1.75rem;
-    }
-
     .itemPrice {
         font-size: 1.5rem;
     }
@@ -89,6 +85,10 @@
 @media(max-width:480px) {
     .item {
         width: 90%;
+    }
+
+    .itemPicture {
+        width: 20rem;
     }
 
     .itemPrice {

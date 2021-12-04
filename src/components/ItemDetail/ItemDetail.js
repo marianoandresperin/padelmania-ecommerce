@@ -29,7 +29,7 @@ const ItemDetail = ({ pictureUrl, title, price, id, stock, detail, cantidad }) =
             setAddedToCart(false)
         }
         // eslint-disable-next-line react-hooks/exhaustive-deps
-        }, [cart.length]);
+        }, [cart]);
 
     const subir = () => {
         stock === counter ? alert("No hay más stock disponible!") : setCounter(counter + 1);

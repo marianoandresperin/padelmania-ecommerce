@@ -52,15 +52,22 @@ const Cart = () => {
         e.preventDefault()
         setBuyer({ name: e.target.form[0].value, telephone: e.target.form[1].value, email: e.target.form[2].value })
         let newOrder = { buyer: buyer, items: cart, date: Timestamp.fromDate(new Date()), totalPrice }
-        addDoc(collection(db, 'orders'), newOrder).then(({ id }) => {
-            setOrderId(id)
-        }).catch(err => {
-            console.log('Ha ocurrido un error ' + err)
-        }).finally(() => {
-            setLoading(false)
-            clearCart()
-            setPurchased(true)
-        })
+        addDoc(collection(db, 'orders'), newOrder)
+            .then(({ id }) => {
+                setOrderId(id)
+                console.log(id)
+            })
+            .catch((err) => {
+                console.log('Ha ocurrido un error ' + err)
+            })
+            .finally(() => {
+                cart.forEach(item => item.stock - item.cantidad
+                );
+                console.log(cart)
+                setLoading(false)
+                clearCart()
+                setPurchased(true)
+            })
     }
 
     return (
