@@ -11,16 +11,13 @@ const CartProvider = ({ children }) => {
         if (!isInCart) {
             setCart([...cart, item]);
             console.log(`Agregaste al carrito: ${item.cantidad}x ${item.title}.`);
-        } else {
-            // const getQuantity = cart.find((product) => product.id === item.id)
-            // setCart([...cart, (item.cantidad)])
         };
     };
     const removeItem = (item) => {
         const getIndex = cart.indexOf(item);
         cart.splice(getIndex, 1);
         console.log(`Eliminaste del carrito: ${item.cantidad}x ${item.title}.`);
-        setCart([...cart])
+        setCart([...cart]);
     };
 
     const clearCart = () => {

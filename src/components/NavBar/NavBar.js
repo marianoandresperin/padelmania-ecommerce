@@ -5,8 +5,8 @@ import logo from '../../assets/logo.png'
 import { useState } from 'react';
 
 const NavBar = () => {
-    const [hamburger, setHamburger] = useState('hamburger')
-    const [navUl, setNavUl] = useState('navUl')
+    const [hamburger, setHamburger] = useState('hamburger');
+    const [navUl, setNavUl] = useState('navUl');
     
     const handleHamburger = () => {
         hamburger === 'hamburger active' ? setHamburger('hamburger') : setHamburger('hamburger active');
@@ -14,9 +14,15 @@ const NavBar = () => {
     }
 
     const hideOnClick = () => {
-        setHamburger('hamburger')
-        setNavUl('navUl')
+        setHamburger('hamburger');
+        setNavUl('navUl');
     }
+
+    const categories = [
+        { category: 'Novato' },
+        { category: 'Intermedio' },
+        { category: 'Avanzado' }
+    ]
 
     return (
         <nav className="nav">
@@ -26,10 +32,10 @@ const NavBar = () => {
                 </Link>
             </div>
             <ul className={navUl}>
-                <li className="navLi" onClick={hideOnClick}><Link to={'/'} className="links">HOME</Link></li>
-                <li className="navLi" onClick={hideOnClick}><NavLink to={'/category/Novato'} className="links">NOVATO</NavLink></li>
-                <li className="navLi" onClick={hideOnClick}><NavLink to={'/category/Intermedio'} className="links">INTERMEDIO</NavLink></li>
-                <li className="navLi" onClick={hideOnClick}><NavLink to={'/category/Avanzado'} className="links">AVANZADO</NavLink></li>
+                <li className="navLi" onClick={hideOnClick}><Link to={'/'} className="links">Home</Link></li>
+                {categories.map((cat) => (
+                    <li key={cat.category} className="navLi" onClick={hideOnClick}><NavLink to={`/category/${cat.category}`} className="links">{cat.category}</NavLink></li>
+                ))}
             </ul>
             < CartWidget />
             <div className={hamburger} onClick={handleHamburger}>
