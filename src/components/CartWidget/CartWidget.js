@@ -9,13 +9,13 @@ const CartWidget = () => {
     const [totalQuantity, setTotalQuantity] = useState(0);
 
     useEffect(() => {
-        setTotalQuantity(getTotalQuantity)
+        setTotalQuantity(getTotalQuantity);
     // eslint-disable-next-line react-hooks/exhaustive-deps
     }, [cart, totalQuantity])
 
     const getTotalQuantity = () => {
-        let total = cart.map((item) => (item.cantidad))
-        return total.reduce((a, b) => a + b, 0)
+        let total = cart.map((item) => (item.cantidad));
+        return total.reduce((a, b) => a + b, 0);
     }
 
     return (

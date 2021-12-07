@@ -9,7 +9,7 @@ const ItemListContainer = ({ greeting, category }) => {
     const [products, setProducts] = useState(null);
     const [loading, setLoading] = useState(false);
     const { categoryId } = useParams();
-    category = categoryId
+    category = categoryId;
 
     useEffect(() => {
         const db = getFirestore();
@@ -36,7 +36,7 @@ const ItemListContainer = ({ greeting, category }) => {
                 console.log('Ocurrió un error al obtener los productos: ' + err);
             })
             .then(() => {
-                setLoading(false)
+                setLoading(false);
             })
     }, [categoryId]);
    

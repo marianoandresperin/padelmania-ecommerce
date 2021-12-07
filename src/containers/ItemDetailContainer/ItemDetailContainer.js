@@ -17,14 +17,14 @@ const ItemDetailContainer = () => {
         const itemRef = doc(db, 'products', itemId);
         getDoc(itemRef)
             .then((snapshot) => {
-                    if (snapshot.exists()) {
-                        setItemDetail(snapshot.data())
-                    }
+                if (snapshot.exists()) {
+                    setItemDetail(snapshot.data());
+                }
             })
             .catch((err) => {
                 console.log('Ocurrió un error al obtener los productos: ' + err);
             })
-            .then(setLoading(false))
+            .then(setLoading(false));
         }, [itemId]);
 
     return (
