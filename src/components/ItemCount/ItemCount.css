@@ -8,7 +8,6 @@
     border: 0.1rem solid #8c52ff;
     border-radius: 10px;
     margin-bottom: 1rem;
-    width: 10rem;
 }
 
 .cantidad {
@@ -71,8 +70,8 @@
     
     .counterBtn {
         font-size: 2rem;
-        width: 3rem;
-        height: 3rem;
+        width: 2rem;
+        height: 2rem;
         text-align: center;
     }
 
