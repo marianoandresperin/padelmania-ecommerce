@@ -35,7 +35,7 @@ const ItemListContainer = ({ greeting, category }) => {
             .catch((err) => {
                 console.log('Ocurrió un error al obtener los productos: ' + err);
             })
-            .then(() => {
+            .finally(() => {
                 setLoading(false);
             })
     }, [categoryId]);

@@ -1,7 +1,7 @@
-import "./Loader.css"
-import loaderImg from "../../assets/loader.gif"
+import "./Loader.css";
+import loaderImg from "../../assets/loader.gif";
 
-const Loader = (size) => {
+const Loader = () => {
     return (
         <>
             <div>

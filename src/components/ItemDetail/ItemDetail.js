@@ -1,4 +1,4 @@
-import "./ItemDetail.css"
+import "./ItemDetail.css";
 import ItemCount from "../ItemCount/ItemCount";
 import { useEffect, useState } from "react";
 import { useParams } from "react-router";
@@ -9,11 +9,11 @@ import { collection, getFirestore, getDocs } from 'firebase/firestore';
 const ItemDetail = ({ pictureUrl, title, price, id, stock, detail, cantidad }) => {
     const { itemId } = useParams();
     const { cart, addItem, removeItem, } = useCart();
-    const [addedToCart, setAddedToCart] = useState(false)
-    const [productList, setProductList] = useState(null)
+    const [addedToCart, setAddedToCart] = useState(false);
+    const [productList, setProductList] = useState(null);
     const [counter, setCounter] = useState(1);
-    const [disablePlus, setDisablePlus] = useState(false)
-    const [disableMinus, setDisableMinus] = useState(false)
+    const [disablePlus, setDisablePlus] = useState(false);
+    const [disableMinus, setDisableMinus] = useState(false);
 
     const db = getFirestore();
     
@@ -67,19 +67,26 @@ const ItemDetail = ({ pictureUrl, title, price, id, stock, detail, cantidad }) =
                     <h1 className="detailTitle">{title}</h1>
                     <p className="detailText">{detail}</p>
                     <h2 className="detailPrice">$ {price}</h2>
-                    {(addedToCart === false) ?
-                        <ItemCount onAdd={subir} onRemove={bajar} cantidad={counter} cartAdd={cartAdd} disableMinus={disableMinus} disablePlus={disablePlus} /> :
-                        <>
+                    {stock > 1 ? <>
+                        {(addedToCart === false) ?
+                            <ItemCount onAdd={subir} onRemove={bajar} cantidad={counter} cartAdd={cartAdd} disableMinus={disableMinus} disablePlus={disablePlus} /> :
+                            <>
                             <p className="detailStock">Tenés {counter} {counter > 1 ? 'unidades' : 'unidad'} en el carrito.</p>
                             <div className="btnContainer">
-                                <NavLink to={`/cart`} className="itemLinks">
-                                    <button className="carritoBtn">Ir al carrito</button>
-                                </NavLink>
-                                <button onClick={cartRemove} className="removeBtn">Quitar del carrito</button>
+                            <NavLink to={`/cart`} className="itemLinks">
+                            <button className="carritoBtn">Ir al carrito</button>
+                            </NavLink>
+                            <button onClick={cartRemove} className="removeBtn">Quitar del carrito</button>
                             </div>
+                            </>
+                        }
+                    <p className="detailStock"> {stock > 1 || stock === 0 ? 'Quedan' : 'Queda'} {stock} en stock!</p>
+                    </> :
+                        <>
+                            <p className="detailStock"> No hay stock disponible actualmente.</p>
+                            <NavLink to={'/'}><button className="cartBuy">Ir a los productos</button></NavLink>
                         </>
                     }
-                    <p className="detailStock"> {stock > 1 ? 'Quedan' : 'Queda'} {stock} en stock!</p>
                 </div>
             </section>
         </>
