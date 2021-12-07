@@ -45,12 +45,15 @@ const Cart = () => {
         return total.reduce((a, b) => a + b, 0);
     };
     
+    // On/off del modal con el formulario de compra
     const handleModal = () => {
         modal === false ? setModal(true) : setModal(false);
     };
     
     const showHideClassName = modal ? "modal display-block" : "modal display-none";
     
+
+    // Funcion que se actualiza mientras cambie el valor de cada input, para ser validados al confirmarse la compra
     const handleInput = (e) => {
         const name = e.target.name;
         const value = e.target.value;
@@ -85,6 +88,7 @@ const Cart = () => {
         }
     }
     
+    // El evento dispara esta funcion que genera la orden, despues de validar el formulario
     const generateOrder = (e) => {
         e.preventDefault();
         if (validName === false) {
@@ -155,7 +159,7 @@ const Cart = () => {
                                     <input className="modalInputs" placeholder="Nombre" name="nombre" type="text" onChange={handleInput}></input>
                                     <input className="modalInputs" placeholder="Apellido" name="apellido" type="text" onChange={handleInput}></input>
                                     <input className="modalInputs" placeholder="E-Mail" name="email" type="email" onChange={handleInput}></input>
-                                    <input className="modalInputs" placeholder="Confirme su E-Mail" name="confirmEmail" type="email" ></input>
+                                    <input className="modalInputs" placeholder="Confirmar E-Mail" name="confirmEmail" type="email" ></input>
                                     <input className="modalInputs" placeholder="Telefono" name="telefono" type="tel" onChange={handleInput}></input>
                                     <div className="modalBtnContainer">
                                         { !loading ? <>

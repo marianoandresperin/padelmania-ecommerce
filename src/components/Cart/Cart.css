@@ -279,7 +279,7 @@
 
     .modal-main {
         width: 90%;
-        height: 70%;
+        height: 45rem;
     }
 
     .modalTitle {
@@ -331,6 +331,14 @@
         width: 10rem;
     }
 
+    .cartBuy {
+        font-size: 1rem;
+    }
+
+    .cartClear {
+        font-size: 1rem;
+    }
+
     .cartData {
         gap: 1rem;
         width: 80%;
@@ -343,7 +351,7 @@
     
     .modal-main {
         width: 90%;
-        height: 95%;
+        height: 40rem;
     }
 
     .modalTitle {
