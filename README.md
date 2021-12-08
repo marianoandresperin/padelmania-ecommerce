@@ -1,70 +1,29 @@
-# Getting Started with Create React App
+# Padelmania Ecommerce
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Hello world! This is an ecommerce project developed mainly with ReactJs (and bootstrapped with [Create React App](https://github.com/facebook/create-react-app)) as part of my final project for the Full Stack Developer title I'm chasing at Coderhouse! It's a fantasy business inspired by one of my most recent passions: Padel. Hope you enjoy it as much as I did while working on it.
 
-## Available Scripts
+## It's alive!
 
-In the project directory, you can run:
+You can watch my creation brought to life right [here](https://padelmania-ecommerce.netlify.app).
 
-### `npm start`
+## Little demo
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+![padelmania-ecommerce-demo](https://user-images.githubusercontent.com/87397644/145141705-7fd2f479-5654-473c-b52d-8e3ce15382ba.gif)
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+## Additional libraries involved in the development
 
-### `npm test`
+Firebase@9.4.1
+[Firebase/Firestore](https://firebase.google.com/docs/web/setup) - Database
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+React-router-dom@5.3.0
+[React Router](https://v5.reactrouter.com/web/guides/quick-start) - Dynamic routes
 
-### `npm run build`
+## About the mastermind
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
-
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+```
+👋 Hi, I’m Mariano Perin (@marianoandresperin) from Argentina, a lawyer who recently became a Front End Developer.
+😎 I've been passionate about technology since I was a little boy, and just recently started to begin my journey.
+🌱 Always open to get acquainted to new technologies, and nurturing my knowledge.
+🎈 I'm slowly building a portfolio of my own, while I would love to participate in other projects.
+📫 You can reach me on GitHub @marianoandresperin, on discord as Mariano#8414, or by e-mail to mariano.perin@gmail.com.
+```
