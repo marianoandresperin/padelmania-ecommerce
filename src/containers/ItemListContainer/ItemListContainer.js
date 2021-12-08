@@ -12,10 +12,10 @@ const ItemListContainer = ({ greeting, category }) => {
     category = categoryId;
 
     useEffect(() => {
+        setLoading(true);
         const db = getFirestore();
         getDocs(collection(db, 'products'))
             .then((snapshot) => {
-                setLoading(true);
                 let unfiltered = snapshot.docs.map((doc) => doc.data());
                 switch (categoryId) {
                     case "Novato":

@@ -19,10 +19,10 @@ const ItemDetailContainer = () => {
             .then((snapshot) => {
                 if (snapshot.exists()) {
                     setItemDetail(snapshot.data());
-                }
+                } else throw Error('Artículo inexistente.');
             })
             .catch((err) => {
-                console.log('Ocurrió un error al obtener los productos: ' + err);
+                console.log(err);
             })
             .finally(setLoading(false));
         }, [itemId]);
@@ -31,7 +31,7 @@ const ItemDetailContainer = () => {
         <>
             <div className="itemDetailContainer">
                 {!loading ?
-                    <>{itemDetail ?
+                    <> {itemDetail ?
                         (
                             <ItemDetail
                             key={itemDetail.id}
@@ -46,9 +46,10 @@ const ItemDetailContainer = () => {
                         />) : <div>
                                 <h1 className="greeting">El item no existe!</h1>
                                 <NavLink to={'/'}><button className="cartBuy">Ir a los productos</button></NavLink>
-                            </div>} </>               
-                        : (<Loader />)
-                    } 
+                        </div>
+                    } </>
+                : (<Loader />)
+                } 
                 
                 
             </div>
